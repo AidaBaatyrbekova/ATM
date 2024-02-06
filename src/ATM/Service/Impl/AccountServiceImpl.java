@@ -62,7 +62,7 @@ public class AccountServiceImpl implements AccountService {
             while (action != 0) {
                 System.out.println("""
                                                 
-                        Выбирите действие:
+                        Действия:
                         1. Проверить баланс
                         2. Внести дипозит
                         3. Перевести деньги
@@ -70,7 +70,7 @@ public class AccountServiceImpl implements AccountService {
                         0. Выйти с программы
                                                 
                         """);
-
+                System.out.print("Выберите действие: ");
                 action = scannerInt.nextInt();
 
                 switch (action) {
@@ -105,7 +105,7 @@ public class AccountServiceImpl implements AccountService {
         if (newAccount != null && cardName.equals(newAccount.getCardName()) && pinCode.equals(newAccount.getPinCode())) {
             System.out.println("\nДобрый день, " + newAccount.getName() + "!");
             System.out.println("Информация вашего счета: ");
-            System.out.println("Ваш баланс состовляет: " + newAccount.getBalance() + " рублей\n");
+            System.out.println("Ваш баланс составляет: " + newAccount.getBalance() + " рублей\n");
         } else {
             System.out.println("\nДанные не верны! ");
             return;
@@ -213,7 +213,7 @@ public class AccountServiceImpl implements AccountService {
             }
 
             if (amount % 5000 == 0) {
-                System.out.println("Вывести " + amount + " по 5к руб " + amount / 5000 + " штук ---> 1");
+                System.out.println("Вывести " + amount + " по 5000 руб " + amount / 5000 + " штук ---> 1");
             }
             if (amount % 2000 == 0) {
                 System.out.println("Вывести " + amount + " по 2000 руб " + amount / 2000 + " штук ---> 2");
